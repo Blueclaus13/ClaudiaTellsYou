@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Apprentice content by Claudia Madrid</title>
+  <meta name="Journal Week_3 and 4" content="Thisi= is the documentation of my Journal Leaning for week 3 and 4">
+  
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+<!-------------UNICONS------------------------------------>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release-pro/v4.0.0/css/solid.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body  style="background-color: whitesmoke" >
+  <div class="container" style="background-color: white ;">
+        
+    <header class="container twelve columns "  style=" border-radius: 20%;">
+      <div class="two columns " style="background-color: white; border-radius: 50%;"><img id="banner" src="images/Icon_banner.png"  alt="Imagen banner for every page"></div>
+      <h1 class="title nine columns "><strong>WEEK 3</strong></h1> 
+    </header>
+
+   <nav class="navPage offset-by-two column" >
+      <a href="index.html">HOME PAGE</a>
+   </nav>
+
+    <main class="twelve columns container"  style="background-color: whitesmoke">
+      
+      
+      <div class="twelve columns" style="margin-top: 25%">
+          <h6>This week I focus my attention to do three activities. 
+            The first, I had a team project where we have to resolve
+            five programming problems from google, and write them in Python, Kotlin, Dart, and TypeScript. 
+            Second, build a blog to report my learning from now on. 
+            The final, solve a programming google problem by myself. For this last, I especially have difficulty 
+            building the algorithm. Then, I decide to study data structure to understand how 
+            I can do a better approach to it. 
+          </h6>
+          <h3 class="subtitle">Translating a log</h3>
+          <p>In my team was decided to divided the problemas by small teams. 
+            I chose to translate the problem d1000000 from Python to Typescript (TP). <br> 
+            At first moment I thought would be easy
+            because TS it's like JavaScript (JS) with some differences. 
+          </p>
+          <p>TS is a language pretty similar than JS. The main difference is that TS allows catching 
+            errors in the syntaxis before running the code. Also, we have to specificate the type 
+            of data we're using in a function, variables, objects or classes. <br>
+            The console runs TS by transpiring code into JS. In a few words, it translates TS to JS.
+          </p>
+          <p>I have a few difficulties changing Python code into TS. My main problem was introducing the data
+            from the terminal.
+            I detected a big difference when we are just running a program without the HTML structure.
+            I couldn't understand a prompt method, an alert, or document.write(). 
+            My team and I discovered we have to build the communication with the console by a method named Readline
+            in Node.js documentation. 
+          </p>
+          <code>
+          const readline = require('readline'); <br>
+            let rl = readline.createInterface(process.stdin, process.stdout);
+          </code>
+          <p><i><br>The output stream is used to print prompts for user input that arrives on, and is read from, 
+            the input stream.
+            From Node.js documentation
+          </i></p>
+
+          <code>
+            const lines : string[] = [];<br>
+            rl.on('line', line => lines.push(line)).on('close', () => runAllTests(lines));
+          </code>
+          <p><br>To catch inputs, we have to receive all the information in an array. Building an interface 
+          we separate and organized every element the user typed. After all, we direct the data to the function we are using 
+         to process the logic and get the answer to the problem. <br>
+         Brings my attention, in python we only need input() command to catch information from the console, but 
+         here we have to build the communication. We use many lines the code when in python we only use 1.<br>
+         Another detail. Because we need to organize the information from the array, I feel the function that manipulates
+         the data was more simplified than the operations in Python.</p>
+
+         <p>In Addition, I learned how to use some tools. I confused the map method with the map class.
+          It took me some time to realize my mistake. <br>
+          <code>// Driver code<br>
+            var arr = [ 11, 89, 23, 7, 98 ];
+         
+            <br>// use of map() method<br>
+            var val = arr.map(Math.log)<br></code>
+            <br>
+            The last code is an example of how map method works. I was trying to use map to convert the data from the array
+            into a number type. 
+         </p>
+
+         <h3 class="subtitle">The blog process</h3>
+         <p>I really like this part. I know I have a lot to learn designing websites, even though I have fun when 
+          I build someting with my design.<br><br>
+          This blog right now I feel it's simple but I tried to make it responsible mobile and easy to read.
+          I looked for a palette where the main color was degrate of pink.
+         </p>
+         <p> My learning with the blog was the existence of Github pages. I didn't know they were a host of websites. 
+          I think I can have the advantage of this tool for personal projects such as my CV or an extensive portfolio. <br>
+          I invested sometime from the week to refresh the tools to build a beautiful website but more about trying to 
+          organized my ideas to set every element where I want as I was thinking or imaging.
+         </p>
+         <p>This isn't finish but for this week was a good start. I'll keep looking for elements or details that can bring 
+          more power to this blog. 
+         </p>
+
+         <h3 class="subtitle">Data structure and algorithm learning</h3>
+         <p>I feel this was my weakness point in the week. I realized how much information I have to shape to improve 
+          my code speed. I watched a tutorial on youtube 
+          <i>"Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges"</i>.
+          I haven't finished it. I'm in the middle part but I feel it has great tools. Some of them are the next:
+          <br>
+          It gives a guideline to try solving memorization dynamic programming problems. 
+         </p>
+         <ul>
+          <li>Make it work </li>
+          <li>Make it efficient</li>
+         </ul>
+         <p>It is recommendable to make it work we should try looking at these problems as a tree. For it, I discovered 
+          <i>mindmeister</i> to do my maps. Then, I can figure out the logic. <br> I want to apply it to my own problem from 
+        google jam. Also at this point, he suggests implementing the tree using recursion. Finally, test it to get correct answers.</p>
+
+        <p>To make a problem efficient I should use a memo object. I feel this part right now it's a little hard to manipulate
+          because I'm spending some time to make it work. It's more about figuring out the logic. <br><br>
+
+          Right now my learn it is how to build a map to break down parts, understand the problem and find conditions. I'm 
+          going to apply them to my own personal problems from google jam.  
+        </p>
+      </div>
+     
+      <div>
+            <p></p>
+
+      </div>
+    </main>
+    <footer></footer>
+  </div>
+
+
+    
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

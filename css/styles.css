@@ -73,6 +73,10 @@ table {
     width: 100%;
     border-radius: 10px 100px / 120px;
  }
+ .navPage a{
+    color: whitesmoke;
+    text-decoration: none;
+ }
  .navPage a:hover{
     color: #E36588 ;
  }

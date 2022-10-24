@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Apprentice content by Claudia Madrid</title>
+  <meta name="Journal Week_3 and 4" content="Thisi= is the documentation of my Journal Leaning for week 3 and 4">
+  
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/styles.css">
+
+<!-------------UNICONS------------------------------------>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release-pro/v4.0.0/css/solid.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+
+</head>
+
+<body  style="background-color: whitesmoke" >
+  <div class="container" style="background-color: white ;">
+        
+    <header class="container twelve columns "  style=" border-radius: 20%;">
+      <div class="two columns " style="background-color: white; border-radius: 50%;"><img id="banner" src="../images/Icon_banner.png"  alt="Imagen banner for every page"></div>
+      <h1 class="title nine columns "><strong>PERSONAL TECHNICAL LOG</strong></h1> 
+    </header>
+
+
+    <main class="twelve columns container"  style="background-color: whitesmoke">
+      <nav class="navPage offset-by-two column container" >
+        <h4 class="one-half column"><a href="../index.html">Claudia's Posts</a></h4>
+        <h4 class="one-half column"><a href="aboutMe.html">About This Blog</a></h4>
+     </nav>
+      
+      <div class="twelve columns" style="margin-top: 5%">
+          <h6>This technical log it's about my own personal problem of CodeJam.
+            I decided to build a python code of Double or One Thing. When I strated I was
+            a little lost about how to break the problem. I checked the analysis to figout out 
+            what to do. I did 3 different tries one better than the next one. In the and 
+            I built a code with efficency from O(n^2) to O(n). 
+          </h6>
+          <h3 class="subtitle">CONTEXT</h3>
+          <p>Google Jam Double or One Thing  <a href="//codingcompetitions.withgoogle.com/codejam/round/0000000000877ba5/0000000000aa8e9c#problem ">Double or One Thing</a>
+          </p>
+          <p>You are given a string of uppercase English letters. You can highlight any number of the letters (possibly all or none of them). The highlighted letters do not need to be consecutive.
+              Then, a new string is produced by processing the letters from left to right: non-highlighted letters are appended once to the new string, while highlighted letters are appended twice.
+          </p>
+          <div><img src="../images/DorOTexplication.png" alt="image to explaint the problem"></div>
+          <p>Given a string, there are multiple strings that can be obtained as a result of
+             this process, depending on the highlighting choices. Among all of those strings, output the one that appears first in alphabetical (also known as lexicographical) order.
+          </p>
+          <div><img src="../images/problem's note.png" alt="important note"></div>
+          <div><img src="../images/sample.png" alt="sample's problem"></div>
+         
+
+         <h3 class="subtitle">Solution</h3>
+         <code>
+            """
+This class: groups the letters and their respective amount.  
+"""<br><br>
+class groupOfLetters():<br>
+
+&nbsp;&nbsp;def __init__(self):<br>
+&nbsp;&nbsp;&nbsp;self.letter = []<br>
+&nbsp;&nbsp;&nbsp;self.conter = []<br><br>
+    
+&nbsp;&nbsp;def saveLetter(self, letter):<br>
+&nbsp;&nbsp;&nbsp;self.letter.append(letter)<br><br>
+
+&nbsp;&nbsp;def saveconter(self, amount):<br>
+    &nbsp;&nbsp;&nbsp;self.conter.append(amount)<br><br>
+
+"""
+This function receives the input to separate every letter and send them
+ to groupOfLetters class. Then it receives the data to make the new string 
+ as a result. <br>
+    conditions to make the string:<br>
+    *result should be in alphabetic order<br>
+        example inputs AAB ; BBA ; AAA <br>
+        <br><br>
+    1-If the letter is smaller than the next letter, it should double<br>
+    the letter( or group of letters): result AAAAB<br><br>
+
+   2 -If the letter is  bigger than the next letter, it <br>
+    doesn't double the letter( or group of letters): result BBA <br><br>
+
+    3-If the string that we receive contains the same group of letters,<br>
+    it should result the same string: result AAA<br><br>
+"""<br><br>
+&nbsp;&nbsp;&nbsp;def doubleOrOneThing():<br>
+&nbsp;&nbsp;word = str(input())<br>
+&nbsp;&nbsp;result = ""<br>
+&nbsp;&nbsp;conter = 1<br><br>
+
+    #change the input to uppercase<br>
+    word= word.upper()<br>
+    large = len(word)<br>
+    data = groupOfLetters()<br><br>
+
+
+    &nbsp;&nbsp;&nbsp;&nbsp;for i in range(large):<br>
+    &nbsp;&nbsp;j= i+1<br><br>
+        """<br>
+        condition to avoid the program breaks when index j is bigger than <br>
+        the array's length<br>
+        """ <br><br>
+        &nbsp;&nbsp;if(j < (large )):<br>
+            #if the comparision it's the same, we count how many times <br>
+            #the letter is repeating<br>
+            &nbsp;&nbsp;if(word[i] == word[j]):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;conter += 1<br>
+            &nbsp;&nbsp;else:<br>
+                #if the letter changed, we save the data with the last letter<br>
+                # and how many times it was repeated.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;data.saveLetter(word[i])<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;data.saveconter(conter)<br>
+                #reset the conter<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;conter = 1<br><br>
+                &nbsp;&nbsp;else:<br>
+            # if j is bigger than the array's lenght we save the last data<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;data.saveLetter(word[i])<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;data.saveconter(conter)<br><br>
+ 
+
+    #For to make the new string with double letters or not<br>
+    for i in range(len(data.letter)):<br>
+    &nbsp;&nbsp;j= i+1<br>
+        # condition 3: Is the same letter in the whole word<br>
+        #we break the "for" and save time. <br>
+        &nbsp;&nbsp;if(i == len(data.letter)):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;result = str(data.letter[i] * data.conter[i])<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;break<br><br>
+        """<br>
+        condition to avoid the program breaks when index j is bigger than <br>
+        the array's length<br>
+        """ <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;if (j < len(data.letter)):<br>
+            #condition 1: double letter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(data.letter[i] < data.letter[j]):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += str(data.letter[i] * (data.conter[i] * 2))<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                #condition 2: not double letter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += str(data.letter[i] * data.conter[i])<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+            #the last data doesn't double because there's nothing to compare<br>
+            #it means it is the biggest like condition 2<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += str(data.letter[i] * data.conter[i])<br><br><br>
+
+
+    return result;<br><br>
+            
+
+cases = int(input())<br>
+results = []<br><br>
+
+#Program stars here:<br>
+#loop into the number of cases<br>
+for case in range(cases):<br>
+    results.append(doubleOrOneThing())<br><br>
+
+#Final step<br>
+#loop into the received answers in the list to print <br>
+for i in range(cases):<br>
+    print(f"Case #{i + 1}: {results[i]}")<br><br>
+         </code>
+         <p>I really like this part. I know I have a lot to learn designing websites, even though I have fun when 
+          I build someting with my design.<br><br>
+          This blog right now I feel it's simple but I tried to make it responsible mobile and easy to read.
+          I looked for a palette where the main color was degrate of pink.
+         </p>
+         <ul>
+            <li>Make it work </li>
+            <li>Make it efficient</li>
+           </ul>
+        
+      </div>
+     
+      <div>
+            <p></p>
+
+      </div>
+    </main>
+    <footer></footer>
+  </div>

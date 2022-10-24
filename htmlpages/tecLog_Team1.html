@@ -106,6 +106,43 @@
         <h3 class="subtitle" id="D10000000">D10000000</h3>
           
           <p> Google Link: <a href="https://codingcompetitions.withgoogle.com/codejam/round/0000000000876ff1/0000000000a46471">D1000000</a></p>
+          <p>
+            While the most typical type of dice have 6 sides, each of which shows a different integer 1 through 6,
+             there are many games that use other types. A dk is a die with k sides, each of which shows a different integer 1 through K. A d6 is a typical die, a d4 has four sides, and a d1000000 has one 
+             Million sides.
+          </p>
+          <p>
+            In this problem, we start with a collection of N dice. The I-th die is a
+            dSi, that is, it has Si sides showing integers 1 through Si. 
+            A straight length L starting at x is the list of x. We want to choose 
+            Some of the dice (possible all) and pick one number from each to form
+            A straight. What is the longest straight we can form in this way?
+          </p>
+          <p>INPUT: The first line of the input gives the number of test cases, T.
+            T test cases follow. Each test case is described in two lines. The first line of a test case contains a single integer N, the number of dice in the game. The second line contains N integers S1, S2, S3…SN, each representing the number of sides of a different die.</p>
+            <div><img src="../images/D1000000.png" alt="D1000000 sample" style="width: 50%;"></div>
+            <p>In this program, I worked in the translation of languages. I translated it to Typescript. It
+                wasn't easy because we had to build the interface to communicate through the Console. I couldn't do it alone but by a team, we find the solution was to use ReadLine library in Node documentation. 
+            </p><br>
+            <p>We open the library</p>
+            <code>const readline = require('readline');<br>
+                let rl = readline.createInterface(process.stdin, process.stdout);</code><br><br>
+            <code><br>
+                //FIRST<br>
+               // The program starts here<br>
+              // Reads input from the console and run all the cases<br><br>
+             const lines : string[] = [];<br>
+              rl.on('line', line => lines.push(line)).on('close', () => runAllTests(lines));<br>
+            </code><br><br>
+            <p>This command starts saving the inputs into a string. After the user uses the close command (control+ C <-- in Mac), the read line closes and it goes to a function named "runAllTest". This function redirects the information to another one to translate the data and again redirects the neat data to a Solve function.  </p>
+            <p>All this process means that we need to catch the whole data to start working with them. After the read line it's closed we have to defragment the whole string to catch out what goes where. It's a tough process. 
+            For example, in python all this process is reduced by an input() line. 
+            </p>
+            <p>This approach wasn't easy but we did a great job having communication in the team to 
+                help each other with our research to solve the problem. I couldn't have done it alone, it was great 
+                to have support to complement what I was thinking. When I was trying to fix the problem I was stock 
+                trying to search another way to use document.write() or promt(). 
+            </p>
             <a id="topbutton" href="#top">Back to the Top </a>
 
         <h3 class="subtitle" id="ChainReaction">Chain Reaction</h3>
@@ -126,6 +163,69 @@
         <h3 class="subtitle" id="EqualSum">Equal Sum</h3>
           
           <p> Google Link: <a href="https://codingcompetitions.withgoogle.com/codejam/round/0000000000877ba5/0000000000aa8fc1">Equal Sum</a></p>
+
+          <p>You are given a set of distinct integers. You need to separate them into two non-empty subsets such that each element belongs to exactly one of them and the sum of all elements of each subset is the same.
+            An anonymous tip told us that the problem above was unlikely to be solved in polynomial time (or something like that), so we decided to change it. Now you get to decide what half of the integers are!</p>
+            <p>This is an interactive problem with three phases. In phase 1, you choose
+                N distinct integers. In phase 2, you are given other N
+                integers that are distinct from each other and from the ones you chose in phase 1. In phase 3, you have to partition those 2N integers into two subsets, both of which sum to the same amount. All 2N integers are to be between 1
+                and 10^9, inclusive, and it is guaranteed that they sum up to an even number.</p>
+
+            <div><img src="../images/EqualSum.png" alt="EqualSum sample" style="width: 50%;"></div>
+            <p>In the picture above, I show you the example of only one case. The first input should be the number of cases. The next line consists of the judge's selection of length for lists to sum. Our code is calculating the first set of numbers to sum, that's our first output. Then, the judge gives us a set of numbers with the length they selected before. Our code calculation is the sum of the first set and the second set. The output's a set that contains a series of numbers that you can sum. That sum's the same for the output set as the hide set with the rest of the numbers. </p>
+            <p>To make an aproch for the solution I had to understand the code. It was more difficult than my personal 
+                assignment. A looked for help with my team to find another view of point. Then we discovered a math solution to solve the the N list of numbers we need to build the equal sum. 
+            </p>
+            <p>We know N can be only 100 (you can find it in Google Link ), so we calculate the first 30 data with 
+                binary numbers (The justify is because a large number in binary occupy less space) then, we add to this list the rest of the numbers given for the judge. It depends on the N length they selected after the case. 
+            </p>
+            <p>After that, was easy to think about how to separate the numbers to build two lists with equal sums. For example: if our hole list was {5 5 1 11} we can have one list {5 5 1} and another {11}, it doesn't matter how many integers have, it's about the sum of the inside numbers in the list. </p>
+
+            <p>Part of my job was to translate the program to Typescript. Again, my main problem was how to introduce the inputs to the running program. Now I had a better idea of what to do. Even though I had built communication from the last problem I translated, now I have dynamic inputs to ask.</p>
+            <br><br>
+            <code>// using module 'readline'<br>
+                const readline = require('readline');<br><br>
+                // creates an interface to receive input and print output<br>
+                let rl = readline.createInterface({<br>
+                    input: process.stdin, <br>
+                    output: process.stdout,<br>
+                    terminal: false<br>
+                });</code><br><br>
+
+            <P>This is an approach I did with my team. We figured out that we need to use the command on()
+                    to do the whole code inside and use a condition to control and close the program when the cases are done.
+                    To ask for the cases we used a question() request.
+            </P>
+
+            <code>rl.question('', (cases) => {<br>
+                // Assigns T cases through line of input<br>
+                T = Number(cases);<br><br>
+             
+                rl.on('line', (input) => {<br>
+
+                    HERE WE WRITE THE WHOLE MAIN CODE<br>
+
+                }).on('close', () => {<br>
+                    process.exit    <br>
+                    })<br>
+                })<br></code><br>
+
+            <p>I processed the inputs inside the parseInteger() function and then I called the 
+                information of first and second input need to calculate the lists. 
+            </p>
+            <br>
+            <code>// function to parse strings into two different variables<br><br>
+                const parseInteger = (input: string) => {<br>
+                   let value = input.split(' ').map((str) => Number(str));<br>
+                   return value;<br>
+                    
+                }</code><br><br>
+
+            <p>All this work, again, wasn't easy to build because at the first moment it was overwhelming this 
+                kind of blockers when you have the date due soon for this assignment. However, as a team, we 
+                resolve the problem with several meetings to brainstorm ideas. In the end, I'm proud od the 
+                communication that my team built to help each other with blockers. 
+            </p>
             <a id="topbutton" href="#top">Back to the Top </a>
         
         <h3 class="subtitle" id="WeightLifting">WeightLifting</h3>
@@ -144,12 +244,6 @@
           </code>
          
 
-         <h3 class="subtitle">The blog process</h3>
-         <p>I really like this part. I know I have a lot to learn designing websites, even though I have fun when 
-          I build someting with my design.<br><br>
-          This blog right now I feel it's simple but I tried to make it responsible mobile and easy to read.
-          I looked for a palette where the main color was degrate of pink.
-         </p>
          <a id="topbutton" href="#top">Back to the Top </a>
         
       </div>

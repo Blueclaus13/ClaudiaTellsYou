@@ -50,9 +50,9 @@
       
       <div class="twelve columns" style="margin-top: 5%">
           <h6>This technical log it's about my own personal problem of CodeJam.
-            I decided to build a python code of Double or One Thing. When I strated I was
+            I decided to build a python code of Double or One Thing. When I started I was
             a little lost about how to break the problem. I checked the analysis to figout out 
-            what to do. I did 3 different tries one better than the next one. In the and 
+            what to do. I did 3 different tries one better than the next one. In the end,  
             I built a code with efficency from O(n^2) to O(n). 
           </h6>
           <h3 class="subtitle">CONTEXT</h3>
@@ -68,7 +68,7 @@
           <div><img src="../images/problem's note.png" alt="important note"></div>
           <div><img src="../images/sample.png" alt="sample's problem"></div>
          
-
+        <a id="topbutton" href="#top">Back to the Top </a>
          <h3 class="subtitle">Solution</h3>
          <code>
             """
@@ -179,15 +179,54 @@ for case in range(cases):<br>
 for i in range(cases):<br>
     print(f"Case #{i + 1}: {results[i]}")<br><br>
          </code>
-         <p>I really like this part. I know I have a lot to learn designing websites, even though I have fun when 
-          I build someting with my design.<br><br>
-          This blog right now I feel it's simple but I tried to make it responsible mobile and easy to read.
-          I looked for a palette where the main color was degrate of pink.
-         </p>
-         <ul>
-            <li>Make it work </li>
-            <li>Make it efficient</li>
-           </ul>
+
+        <a id="topbutton" href="#top">Back to the Top </a>
+         
+        <p>The solution here is the result of two more tries. It took me some time to
+           understand the problem and then when I did my first code wasn't completely right.
+          My first approach was to make all the possible solutions and loop
+          in them to select the one with alphabetic order. This program run well
+          with short words but with larger words it was stuck. 
+        </p>
+        <div><img src="../images/Possible solutions.png" alt="sample's solutions"></div>
+        <p>Then, my second approach was better. It could do half of the solutions but I missed
+          a pattern. We're taking this example --> AABBA. I missed this fact: when we
+          have a group of words (same letter) next to a higher in alphabetical order letter,
+          the group of letters could double but when the group was next to a lower it is supposed to stay
+          in one. My mistake was that my code was checked letter by letter. It means that in a group
+           of letters BBA my result was BBBA because I duplicate the first B because it was the same letter. The right result is BBA stays like that because B is bigger than A
+           Then, when my code fails Codejame. I realized the fact that I need to do a comparison
+           by groups of letters and duplicate by groups.
+        </p>
+        <p>When I found that pattern I did the last solution and I improved the efficiency because I started
+          to understand how Efficiency works. I had a nested for to loop and make the comparations by letter. I 
+          decided to build a class where I can save the letters and a counter to track by groups. 
+          Then I just built a Foor to loop in a list and I nested a condition to control the index when it reached
+          the edge of the list. I based the code in 3 main conditions:
+        </p>
+        <p>Result should be in alphabetic order example inputs AAB ; BBA ; AAA</p>
+        <ul>
+         <li>1-If the letter is smaller than the next letter, it should double
+          the letter( or group of letters): result AAAAB </li>
+         <li>2 -If the letter is  bigger than the next letter, it 
+          doesn't double the letter( or group of letters): result BBA</li>
+          <li>3-If the string that we receive contains the same group of letters,
+            it should result the same string: result AAA</li>
+        </ul>
+        <a id="topbutton" href="#top">Back to the Top </a>
+
+        <h3 class="subtitle">Talking about the alternatives solutions</h3>
+        <p>My tries in this code show me how many ways can exist to build a program. 
+          Also, the result code depends on how well you understand the needs. For me, it was 
+           one of the more difficult parts. I fix that, by reading about the analysis of the problem, 
+           looking at some videos explaining the dynamic movement of the variables, and building some Treemaps
+           to understand the algorithm patterns. 
+        </p>
+        <p>I think there are more solutions to rich this problem. I made one of them with good efficiency.
+          I think something I can improve is the organization of my code, the name of my variables.
+           Well, in this blog my code looks badly organized but in my python file, 
+           it has comments and good indent. 
+          I can conclude that the best approach it's the code understandable and efficient in run time. </p>
         
       </div>
      

@@ -55,17 +55,164 @@
           because this was my first time making a complete app with those technologies. I received tutorial and
           reference information. I use websites, youtube, and Oreally tutorials for many concepts. 
           </h6>
+         
         <h1 class="subtitle">CONTEXT</h1>
-        <h1 class="subtitle">Functional Requirements</h1>
+          <p>This context is divided in three main sections; Functional Requirements, Technical Requirements, and
+              Engineering Requirements. Next I'm going to break down a short explication of the requirements in this app.  </p>
+              <h5>Functional Requirements</h5>
+                      <p>client needs to implement a to do list 
+                        to help manage their tasks in their daily job.
+                        The client asked you to implement the following functionality:</p>
+              <ol>
+                <li>Create a “to do” specifying the name, a priority, and possibly a due date </li>
+                <li>Ability to edit name, priority and due date for existing “to do” tasks 
+                    <i>They want to be able to specify a due date or clear the due date 
+                      (because they are not interested in when to finish that “to do”) </i></li>
+                <li>Be able to filter “to do” specifying 
+                   the name (or part of the name), and the priority, and if they are done/undone. </li>
+                <li>Be able to sort the “to do” by priority and/or due date.  
+                   <i>For example, be able to sort items where their due date is 
+                    soon and sort them also by priority to see what 
+                    tasks are more urgent or less urgent </i></li>
+
+                <li>Mark “to do” as done (clicking in a checkbox) or to undone a “to do” 
+                    <i>The undone functionality is just there if there is a mistake.</i></li>
+                <li>Since it is possible that the client will have a lot of “to do” 
+                  they need to paginate the list of “to do”</li>
+                <li>Ability to know, in average, the time between creation and done
+                   for all “to do”. This should be shown in general for all done “to do” and also grouped by priority.
+                    <i>This is important for the client since this is a metric, they follow to measure performance.</i> </li>
+              </ol>
+              <a id="topbutton" href="#top">Back to the Top </a>
+              <h5>Technical Requirements</h5>
+                      <p>The UI Requirements are specified for the the client as the following markup
+                        to design the app.
+                      </p>
+                      <div><img src="../images/Technical Requirments.png"
+                         alt="Specific Technical Requirements Markup" style="width: 50%;"></div>
+                      <ol>
+                        <li>Search/Filtering Controls </li>
+                        <li>New To Do Button. This should open a modal to type the “to do” data.</li>
+                        <li>Priority column should show in the header the classic up and down arrows to allow the user to sort </li>
+                        <li>Due date column should show in the header the classic up and own arrows to allow the user to sort </li>
+                        <li>Action column to show actions (links/buttons) to allow the user to delete or edit a “to do” 
+                              <i>a. To Edit is ok to show a modal similar to the one to create a “to do” </i>
+                        </li>
+                        <li>Pagination control. Showing the pages, its number and the next and previous page is enough. </li>
+                        <li>Area to show the metrics </li>
+                      </ol>
+                      <h6> Extra details you can add:</h6>
+                          <ol>
+                            <li>Show the row with background colors depending on the due date:
+                                <br>
+                                <ul><li>No due date --> No background color</li>
+                                  <li>One week between due date and today --> Red background color </li>
+                                  <li>2 weeks between due date and today --> Yellow background color </li> 
+                                  <li>More that 2 weeks between due date and today --> Green background color </li> </ul></li>
+                            <li>Strikethrough fonts for those tasks marked as done </li>
+                          </ol>
+              <a id="topbutton" href="#top">Back to the Top </a>
+              <h5>Engineering Requirements</h5>
+                  <p>The Engineering team of the client 
+                    is asking you to implement the functionality using the following recommendations: </p>
+                  
+                  <p style="background-color: pink;">Model</p>
+                  <ul>
+                    <li>Id. This could be a number or string or a combination. Must be unique. </li>
+                    <li>Text (required). Max length is 120 chars. </li>
+                    <li>A due date (optional). </li>
+                    <li>Done/undone flag </li>
+                    <li>A done date. When the “to do” is marked as done this date is set</li>
+                    <li>Priority (required). Options: High, Medium and Low. </li>
+                    <li>Creation date.</li>
+                  </ul>
+                  <p style="background-color: pink;">API</p>
+                  <ul>
+                    <li>A GET endpoint (/todos) to list “to dos” 
+                      <ul>
+                        <li>Include pagination. Pages should be of 10 elements. </li>
+                        <li>Sort by priority and/or due date </li>
+                        <li>Filter by done/undone </li>
+                        <li>Filter by the name or part of the name </li>
+                        <li>Filter by priority </li></ul>
+                    </li>
+                    <li>A POST endpoint (/todos) to create “to dos”<br>
+                        <i>Validations included </i> </li>
+                    <li>A PUT endpoint (/todos/{id}) to update the “to do” name, due date and/or priority
+                      <br>
+                        <i>Validations included </i> </li>
+                    <li>A PUT/POST endpoint (/todos/{id}/done) to mark “to do” as done
+                      <ul><li>This should update the “done date” property </li>
+                        <li>If “to do” is already done nothing should happen (no error returned) </li></ul>
+                    </li>
+                    <li>A PUT/POST endpoint (/todos/{id}/undone) to mark “to do” as undone 
+                        <ul><li>If “to do” is already undone nothing should happen </li>
+                            <li>If “to do” is done, this should clear the done date </li></ul>
+                    </li>
+                  </ul>
+        <p style="background-color: pink;">Database</p>  
+              <p>No need to use a database by now, storing data could be in
+                 memory using Java Collections (no in-memory databases like H2) 
+                 and it is ok if data is lost when the application is shutdown. 
+                 But they are asking you to design the persistent layer such that
+                  it will be somehow easy to switch from in-memory implementation 
+                  to a database implementation (they are planning to implement the 
+                  database implementation later). </p>
+
+          <p style="background-color: pink;">Repositories</p>
+                <p>They need 2 git repositories. Front end and back end.  
+                  In both repositories the main branch must be the one ready for production. 
+                  It's up to you the other branches. </p>
+            <h6> Frontend Technology</h6>
+                  <ul>
+                    <li>JavaScript </li>
+                    <li>ReactJS </li>
+                    <li>Up to you to use Redux or React Context</li>
+                  </ul>
+                  <p>They need at least the following commands to run the project:</p>
+                  <ul>
+                    <li>npm run start -> To run the front-end application</li>
+                    <li>npm run tests -> To run all tests in the front-end application</li>
+                  </ul>
+            <h6> Backend Technology</h6>
+                  <ul>
+                    <li>Java </li>
+                    <li>Maven</li>
+                    <li>Spring Boot</li>
+                  </ul>
+                  <p>They need at least the following commands to run the project:</p>
+                  <ul>
+                    <li>mvn spring-boot:run ->To run the back-end application </li>
+                    <li>nvn test -> To run all tests in the back-end application </li>
+                  </ul>
+
+                  <p>Back-end project must run in port 9090. </p>
+                    <p>Your API should handle correct http return codes: </p>
+                  <ul>
+                    <li>Successful/Normal responses should return 200 (OK)</li>
+                    <li>Responses where a resource is not found (saying if you are trying to get a specific resource or deleting one that no longer exists) should return 404 (Not Found) 
+                      When a ToDo is created, it should return 201 (Created) </li>
+                    <li>Validation errors when creating a ToDo should return 400 (Bad Request)
+                       and their respective error message indicating what happened (stylistic Json format). </li></ul>
+
+        <a id="topbutton" href="#top">Back to the Top </a>
+        <h1 class="subtitle">DEVELOPMENT </h1>
+            <p>This is the section where I'm going to explain the developing sections of my app
+              I'll add some sections of code about how I did the required features. 
+            </p>
+            <p>Watch a video about the results: <a href="https://youtu.be/Q1PtA-d5vgg">Video To Do App
+            </a></p>
+
+        <h2 class="subtitle">Functional Requirements</h2>
+        
+       
         <h1 class="subtitle">Technical Requirements</h1>
-                <h3 class="subtitle"> UI Requirements</h6>
-        <h1 class="subtitle">Engineering Requirements</h1>
                 <h3 class="subtitle"> UI Requirements</h6>
         <h1 class="subtitle">Engineering Requirements</h1>
                 <h3 class="subtitle"> Model</h6>
                 <h3 class="subtitle"> Api</h6>
                 <h3 class="subtitle"> Database</h6>
-        <h1 class="subtitle">RESULTS</h1>
+        <h1 class="subtitle">General RESULTS</h1>
         <h1 class="subtitle">CONCLUSION</h1>
         
         <div class="twelve columns" style="margin-top: 5%">

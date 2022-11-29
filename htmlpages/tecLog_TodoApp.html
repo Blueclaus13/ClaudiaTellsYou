@@ -204,15 +204,144 @@
             </a></p>
 
         <h2 class="subtitle">Functional Requirements</h2>
+        <i>Create a “to do” specifying the name, a priority, and possibly a due date</i>
+        <p>I did this section building a Class with specific variables that are part of a
+          Todo. 
+        </p>
+        <div><img src="../images/TodoApp/TaskClass.png"
+          alt="Picture of variables in Class Task" style="width: 20%;">
+          <p>Ability to edit name, priority and due date for existing “to do” tasks They want to be able to specify 
+            a due date or clear the due date (because they are not interested in when to finish that “to do”)</p>
+          <img src="../images/TodoApp/NewTask.png"
+          alt="Picture of Module" style="width: 20%;"></div>
+          
+          <p><i>Be able to filter “to do” specifying the name (or part of the name), and the priority, 
+            and if they are done/undone.</i></p>
+          <p>The filter section cost me some time to figure out how to connect API and Frontend
+            to send the variables. I used parameters through the URL, then in a Request GET 
+            I built a series of lines to validate what was coming. 
+          </p>
+          <div><img src="../images/TodoApp/Filters.png"
+            alt="Code of filter section" style="width: 50%;">
+
+          <i>Be able to sort the “to do” by priority and/or due date. For example, be able to sort items where their 
+            due date is soon and sort them also by priority to see what tasks are more urgent or less urgent</i>
+          <p>The sort section took me some time, as well. I was learning how to manage maven and 
+            Spring boot. Also, took me time to figure out how to call a request from the Frontend. 
+            I did the filter and sort at the end of the date delivery. At first, I felt complicated the sort because
+            it wasn't working, but then I figured out the problem was in my type of list. The sort libraries 
+            need a mutable list. 
+          </p>
+          <div><img src="../images/TodoApp/Sort.png"
+            alt="Code of Sort section" style="width: 50%;">
+            <i>Mark “to do” as done (clicking in a checkbox) or 
+              to undone a “to do” The undone functionality is just there if there is a mistake.</i>
+            <p>It wasn't complicated. It was to look for the id and change the value for Done.
+              Something to work in this section is more in the frontend. If a task is done it affects the 
+              Metrics section and the view of the task. I could improve how a Done task is showing,
+              but the blockers (Sort, filter, pagination) took me some time and I couldn't make a better
+              presentation of my app. 
+            </p>
+            <div><img src="../images/TodoApp/DoneAndUndone.png"
+              alt="Code of Done-Undone section" style="width: 50%;">
+
+              <i>Since it is possible that the client will have a lot of “to do” they need to paginate the list of “to do”</i>
+              <p>The pagination in the app was new. It's my first time making pagination
+                on an app. Some information made it pretty difficult to follow. It didn't take me too much time
+                but for the first time understanding the classes was confused. Actually, because our application
+                doesn't have a repository, Most of the information on the Web was using some libraries 
+                from the Repository. The intention of this exercise was to figure out how to make  
+                pagination without those tools. I used a DTO class to add values that had nothing 
+                 to do with a task at all; like metrics, and pagination information. Then my front end could take
+                 that data to build pagination and the metrics section. At the end this was my result:
+              </p>
+              <div><img src="../images/TodoApp/Pagination.png"
+                alt="Code of Pagination section" style="width: 50%;">
+
+                <i>Ability to know, in average, the time between creation and done for all “to do”. 
+                  This should be shown in general for all done “to do” and also grouped by priority.
+                   This is important for the client since this is a metric, they follow to measure performance.</i>
+
+                   <p>The difficult part of the metrics was working on building a function to change the seconds 
+                    received from the API into the kind of unit time it is; like hours,  minutes and seconds. 
+                  </p>
+              <div><img src="../images/TodoApp/Format time.png"
+                alt="Code of NewTask section" style="width: 50%;">
+
+                <p>Talking about date variables, I learned that Data was a string in my Frontend but
+                  I need it to send the request like an Object. This problem was more part of the Frontend 
+                  Section than in the API. It affects when you build a new task because I had an error request. 
+                  I fix it like this:
+                </p>
+            
+              <div><img src="../images/TodoApp/Changing objectDate.png"
+                alt="Code of NewTask section" style="width: 50%;">
+
+              
+
         
-       
-        <h1 class="subtitle">Technical Requirements</h1>
-                <h3 class="subtitle"> UI Requirements</h6>
-        <h1 class="subtitle">Engineering Requirements</h1>
-                <h3 class="subtitle"> Model</h6>
                 <h3 class="subtitle"> Api</h6>
-                <h3 class="subtitle"> Database</h6>
-        <h1 class="subtitle">General RESULTS</h1>
+                  <p>This section was successful complited.</p>
+                  <ul>
+                    <li>A GET endpoint (/todos) to list “to dos” 
+                      
+                    </li>
+                    <li>A POST endpoint (/todos) to create “to dos”<br>
+                        <i>Validations included </i> </li>
+                    <li>A PUT endpoint (/todos/{id}) to update the “to do” name, due date and/or priority
+                      <br>
+                        <i>Validations included </i> </li>
+
+                        <div><img src="../images/TodoApp/AddAndEditTaskRequest.png"
+                          alt="Code of AddAndEditTaskRequest section" style="width: 50%;">
+
+                    <li>A PUT/POST endpoint (/todos/{id}/done) to mark “to do” as done
+                      <ul><li>This should update the “done date” property </li>
+                        <li>If “to do” is already done nothing should happen (no error returned) </li></ul>
+                    </li>
+                    <li>A PUT/POST endpoint (/todos/{id}/undone) to mark “to do” as undone 
+                        <ul><li>If “to do” is already undone nothing should happen </li>
+                            <li>If “to do” is done, this should clear the done date </li></ul>
+                    </li>
+                  </ul>
+
+        <h1 class="subtitle">General RESULTS and CONCLUSION</h1>
+        <p>This application has a lot of improved areas/ opportunities. In this section of the results
+          I want to talk about those details I missed. 
+        </p>
+        <p>Tests: I couldn't finish the test area. Actually, I was working in improving everting 
+          from the Back-end and front-end then at the end I could make time to search for how to build 
+          a test.
+        </p>
+        <p>In the Back-end: I found the sort section has a mistake when is working without due dates. It
+          is important because the client asked for the ability to add due dates without a specific date. 
+        </p>
+        <p>Frontend: This is something that I would have liked to fix in time. I forgot to fix the 
+          problem with the buttons that aren't hidden when a module comes out. <br>
+          Also, sometimes the application didn't reload when it was a new time or when you clicked Done/Undone 
+          It happened because I used a variable that in time doesn't change because the component isn't active. 
+          I should connect better that section. It's because I have to practice the use of hooks, and I might need
+          to understand better how the hooks are working in React. Moreover, I should make betters practices when I'm building
+          components, it would make it easy to fix and get improvements in the code. 
+          </p>
+       
         <h1 class="subtitle">CONCLUSION</h1>
+    
+
+        <p>I learned in this project a lot of information. Actually, I'm still learning how to manage
+          the new tools; for example the tools of React, Java, and Spring Boot.
+        </p>
+        <p>I can see the reason because I couldn't make a better view and code in the App, 
+          and the missing parts of the requests from the client. I think it's because I built 
+         a whole application without too much support when I had too many questions. It means I 
+        may look for ways to make self-learning. I used youtube, Websites, and some questions in groups
+      of experts. I'm still trying to find a way to make me more independent in coding
+     and I would start with the interpretation of those sources. </p>
+
+        <p>In general, I can see how I need to improve the organization of my code.
+           I should acomplish good practices as I'm writing code. It's like the English, you get 
+           better if you practice. This is my firt time making an App like this. I'm sure I'm 
+          going to make time to fix those details, but right now this is the result of my firts try.</p>
+        
         
         <div class="twelve columns" style="margin-top: 5%">

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Apprentice content by Claudia Madrid</title>
+  <meta name="Journal Technical Log Apprentice Universe App" content="Thisi= is the documentation of my Journal Leaning for Apprentice Universe app">
+  
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/styles.css">
+
+<!-------------UNICONS------------------------------------>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release-pro/v4.0.0/css/solid.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+
+</head>
+<body  style="background-color: whitesmoke" >
+    <div class="container" style="background-color: white ;">
+          
+      <header class="container twelve columns "  style=" border-radius: 20%;">
+        <div class="two columns " style="background-color: white; border-radius: 50%;"><img id="banner" src="../images/Icon_banner.png"  alt="Imagen banner for every page"></div>
+        <h1 class="title nine columns "><strong>APPRENTICE UNIVERSE APP TECHNICAL LOG</strong></h1> 
+      </header>
+  
+  
+      <main class="twelve columns container"  style="background-color: whitesmoke">
+        <nav class="navPage offset-by-two column container" >
+          <h4 class="one-half column"><a href="../index.html">Claudia's Posts</a></h4>
+          <h4 class="one-half column"><a href="aboutMe.html">About This Blog</a></h4>
+       </nav>
+       
+        <h1 class="subtitle">OVERVIEW</h1>
+        <h6>This technical Log is to explain the apprentice universe app that we started in January and finished the 
+            first week of February. This is an extensive project in a short time but we are proud to present to you the results
+            that we had. The functionality of this app is based on the need for a platform to help the training department
+            of the company where I'm making my internship. The App is built with Java, Spring, and React technologies.
+            In this short time, we also learned other technologies like Redux, PostgresSQL, Material UI, and dependency Jjwt. The main 
+            challenge was to dominate the new tools and made present results every week to our client. This project was pretty different than 
+            TODO app because I already have some knowledge about what to do. Around the project, we faced some difficulties with the times
+            and results that we expected but as a team, we communicated together and made agreements to give results. I hope that you enjoy this reading
+            as I did making this app. 
+          </h6>
+          <nav>
+            <li><a href="#projectDescription"> Project Description</a></li>
+            <li><a href="#Backend"> Backend</a></li>
+            <li><a href="#frontend"> Frontend</a></li>
+          </nav>
+         
+        <h1 class="subtitle" id="projectDescription">Project Description</h1>
+          <p>
+            Apprentice universe is an App developed to simplify company organization in the talent 
+            development field. This refers to efforts to identify, train, and advance employees within the company.
+             The client has an important need to control assignations to upskilling, and reskilling employees. 
+             The main functionality consists in connecting this goal properly with all the possible situations
+             that this relationship between the trainer, the process, and the organization would have;
+              for example, we have four different kinds of users; apprentice, stakeholder, admin, and super admin. 
+              We intent to give a tool where all these characters can interact each other with their own needs to 
+              accomplish the training process.
+          </p>
+          <p>Also, is important to explain the main roles and app's items that we give for their functions.
+            The apprentice is the training user who is receiving assignations, makes reports for the staff
+             (stakeholders), and communicates issues around the training program. The stakeholder user manager 
+             a number of apprentices named batches, their function consists in supervising by creating, scoring, 
+             and giving feedback on assignments, receiving the tickets (it's how we named a blocker) or issues that 
+             apprentices report, checking daily status and learned reports, and adding Frequently asked questions. 
+             The admin section is divided between two users; admin and super admin. Admin is a user who can create 
+             apprentices' users, batches, and stakeholders, and visualize their assignments, tickets, and daily reports. 
+             Super Admin can manage the same that all other users but in addition, they can delete, change or archive
+              information. </p>
+
+              <a id="topbutton" href="#top">Back to the Top </a>
+
+              <h5 class="subsubtitle"> >>Functionalities </h5>
+              <br>
+               
+                <h6 style="font-weight: 600;">User - Apprentices: </h6>
+                 
+                      <p>This role can: </p>
+    
+                      <ul>
+                        <li>Submit Assignments</li>
+                        <li>Follow up feedback and grade in assignments. </li>
+                        <li>Post a daily status that consists in a series of questions 
+                            about how they are, if they have a blocker/issue/ticket, and what are they working.  </li>
+                        <li>Post a Today I learned report, it's part of the daily status section but it's a different report.  </li>
+                        <li>Review FAQs section to find quick answers. </li>
+                        <li>Review their own Daily Status, Today I learned, Tickets, and Assignments.  </li>
+                      </ul>
+
+                      <h6 style="font-weight: 600;">User - Stakeholder:  </h6>
+                 
+                      <p>This role can: </p>
+    
+                      <ul>
+                        <li>Receive Tickets for follow-up their apprentices in their batches.  </li>
+                        <li>Give a resolution in their Tickets with a comment.   </li>
+                        <li>Give feedback on the apprentice' solution in an assignment.  </li>
+                        <li>Review the current assignments in their dashboard and an overview of how many people have given a solution.  </li>
+                        <li>Review their workload of assignments and Tickets.  </li>
+                        <li>RMake FAQs to add to the page.   </li>
+                        <li>Create or edit individual assignments for users on their own batches.</li>
+                        <li>Review general information of their own batches. </li>
+                      </ul>
+                      <h6 style="font-weight: 600;">User - Administrators:   </h6>
+                 
+                      <p>This role can: </p>
+    
+                      <ul>
+                        <li>Create new users and archive or edit existing one. </li>
+                        <li>Create, edit, and archive, batches. </li>
+                        <li>Edit roles in users.   </li>
+                        <li>Assign batches to stakeholders. </li>
+                        <li>Create weekly assignments for a batch.  </li>
+                        <li>Create, edit or archive assignments and deadlines.  </li>
+                        <li>View a dashboard per batch with the content of assignments, reports, and tickets. </li>
+                        <li>Review users' information or interactions.  </li>
+                        <li>View users' dashboard. </li>
+                      </ul>
+
+                      <h6 style="font-weight: 600;">User - Super Admin:     </h6>
+                 
+                      <p>This role can: </p>
+    
+                      <ul>
+                        <li> Do everything other roles do. </li>
+                        <li> Delate users, groups, and assignments.  </li>
+                      </ul>
+
+                      <h6 style="font-weight: 600;">System features    </h6>
+                      <p>This role can: </p>
+    
+                      <ul>
+                        <li> OAuth login </li>
+                        <li> Supports different archives (.doc, .txt) </li>
+                        <li>Import users via CSV or text file </li>
+                      </ul>
+              <a id="topbutton" href="#top">Back to the Top </a>
+
+              <h5 class="subsubtitle"> >>Teamwork planning </h5>
+              <br>
+                  <p>We decided to apply for our project The Agile Product RoadMap. 
+                    It's a template where we can develop some strategic steps for our product and at the
+                    same time receive feedback from our clients, every term. This roadmap type can shift
+                    based on feedback. We consider that quality a tool to develop this project.  
+                    </p>
+
+                    <div><img src="../images/ApprenticeUniverse/workflow.png"
+                         alt="workflow" style="width: 50%;"></div> 
+
+       
+                             
+                <h1 class="subtitle" id="Backend">BackEnd</h1>
+                <h5 class="subsubtitle"> >>Backend structure </h5>
+                <p>The backend was built using Spring Boot 3.0.1 along with Java 17. </p>
+                 <p>The dependencies used were: </p>
+              
+                  <!-- <p style="background-color: pink;">Model</p> -->
+                  <ul>
+                    <li>Spring boot starter web: Starter for building web, 
+                        including RESTful, applications using Spring MVC. Uses Tomcat as the default embedded container </li>
+                    <li>Spring boot starter validation: Package to validate parameters that are
+                         passed into a method of annotated classes. </li>
+                    <li>Spring boot starter data jpa: Focuses on using JPA 
+                        to store data in a relational database. </li>
+                    <li>Spring boot starter jdbc: Data access technology 
+                        used for Java database connectivity. </li>
+                    <li>Postgresql: To connect a relational database 
+                        into a spring boot app. </li>
+                  </ul>
+
+                  <p>Four dependencies were used for the security part of the application which 
+                    implements JSON Web Token (JWT): </p>
+                    <ul>
+                        <li>Spring-boot-starter-oauth2-resource-server </li>
+                        <li>Jjwt-api </li>
+                        <li>Jjwt-impl </li>
+                        <li>Jjwtl-jackson </li>
+                    </ul>
+
+                    <a id="topbutton" href="#top">Back to the Top </a>
+
+                <h5 class="subsubtitle"> >>Project Structure </h5>
+
+                <div class="imagenes">backend packages</div>
+      
+              <p>Packages: </p>
+              <ul>
+                <li>config: Holds the classes that configurate our security and token. </li>
+                <li>controllers: Holds the controllers for, Assignments, Batches, Login, Ticket & User. </li>
+                <li>dtos: Holds the data transfer objects to safely deliver a response </li>
+                <li>models: The models that help us map the database tables </li>
+                <li>repositories: Holds the controllers for, Assignments, Batche, FAQ, Login, Ticket & User. </li>
+                <li>services: Contains the services layer used for the controllers </li>
+              </ul>
+
+        
+                        
+                     <h5 class="subsubtitle"> >>Models</h5>
+            
+                     <p>In this project all Entities will have automatically generated UUID 
+                                        for security purposes. Since we are using PostgreSQL 
+                                        to build the relationships between entities and tables, the full 
+                                        relationship diagram will be shown at the end. </p>
+                    <p>User model - Entity </p>
+                    <p>As an entity (@Entity Annotation), the user model will have its own
+                        repository, and is composed of the following fields: </p>
+
+                        <div class="imagenes">backend packages</div>
+            
+            
+                 <p>The User model is general for every user in the database with some restrictions depending the user 
+                    role. As an “Apprentice” we can only be part of one batch linking the batch_fk (foreign key)
+                    field, whereas the other roles can own (but not be part of) different batches. In addition,
+                     only Users with the role “Apprentice” can hold assignments. </p>
+
+                <p>The way this user entity can hold e.g. several assignments is using 
+                    a Set data structure, that will be linked through a table relationship. 
+                    The relationships this entity has are the following: </p>
+
+                    <ul>
+                        <li>Many to Many Set “assignments” between User -Assignments: A user with the role “Apprentice” can have many Assignments entities stored and vice versa. </li>
+                        <li>Many to One field “userBatch” between Batch -User: A user can have one batch assigned if the role is “Apprentice”, and a Batch can have several users. </li>
+                        <li>One to Many Set “ownedBatches” between User -Batch: A user can own many Batches if the role is “Stakeholder”, “Admin”, or “Super admin” and the batch can only have 1 owner. </li>
+                        <li>One to Many Set “tickets” between User - Tickets: A user can have many tickets, but the ticket can only have one user. </li>
+                        <li>Element Collection (One to Many) “learned_today” relationship between User -LearnedToday: A user can own several LearnedToday instances. </li>
+                        <li>Element Collection (One to Many) “daily_status” relationship between User - DailyStatus: A user can own several DailyStatus instances. </li>
+                    </ul>
+
+
+            <p>DailyStatus model -Embeddable <br>
+ 
+                As an embeddable model (@Embeddable Annotation), 
+                it won't have its own repository, instead, 
+                it will be embedded as a Set, that is to say, a Table in each user model. 
+                It is composed of the following fields: </p>
+
+                <div class="imagenes">backend packages</div>
+
+                <a id="topbutton" href="#top">Back to the Top </a>
+
+        <p>LearnedToday model - Embeddable <br>
+ 
+            As an embeddable model (@Embeddable Annotation), it won't have its own repository, 
+            instead, it will be embedded as a Set, that is to say,
+             a Table in each user model. It is composed of the following fields: </p>
+
+             <div class="imagenes">backend packages</div>
+
+        <p>Ticket model - Entity <br>
+ 
+            As an entity (@Entity Annotation), the ticket model will have
+             its own repository, and is composed of the following fields: </p>
+
+             <div class="imagenes">backend packages</div>
+                    
+
+        <p>Assignment model - Entity <br>
+ 
+            As an entity (@Entity Annotation), the assignment model will have its own repository, 
+            and is composed of the following fields: 
+             </p>
+
+             <div class="imagenes">backend packages</div>
+
+             <p>The way this assignment entity can hold e.g., several users is using a Set data structure,
+                 that will be linked through a table relationship. The relationships this entity has are the following: </p>
+
+         <ul>
+             <li>Many to Many Set “apprentices” between Assignments - Users: An assignment can have 
+                many users “apprentices” and a user can have many assignments. </li>
+            <li>One to Many Set “ownedBatches” between User - Batch: A user can own several Batches if 
+                the role is “Stakeholder”, “Admin”, or “Super admin” and the batch can only have 1 owner. </li>
+            <li>Element Collection (One to Many) “assignment_solutions” relationship between Assignment
+                 - AssignmentSolution: An assignment can own several AssignmentSolution instances. </li>
+                
+        </ul>
+
+        <p>In addtition, this model can have other fields 
+            depending if the assignment is an individual assignment,
+             batch assignment or weekly assignment: </p>
+
+        <ul>
+            <li>Batch_fk: If the assignment is a batch assignment, it will have a One
+                 to Many relationship with Batch, which means a Batch can have many assignments,
+                  but the assignment can only have 1 batch. </li>
+            <li>Individual: The user UUID if the assignment is individual. </li>
+            <li>Weekly_assignment: The weekly assignment will be true or false depending if it is marked as weekly. </li>
+        </ul>
+
+        <a id="topbutton" href="#top">Back to the Top </a>
+
+        <p>AssignmentSolution model - Embeddable Join Table <br>
+ 
+            As an embeddable model (@Embeddable Annotation), it won't have its own repository, instead, 
+            it will be embedded as a Set, that is to say, a Table in each assignment model. It is composed of the following fields: </p>
+            <div class="imagenes">backend packages</div>
+    <p>apprentice_assignments - Join Table <br>
+ 
+        This is the result of the Many to Many relationships between User and Assignment, 
+        it holds the relation between its UUIDs. </p>
+        <div class="imagenes">backend packages</div>
+<p>Batch model - Entity 
+ 
+    As an entity (@Entity Annotation), the assignment model will have its 
+    own repository, and is composed of the following fields: </p>
+            
+    <div class="imagenes">backend packages</div>
+
+    <p>
+        The way this Batch entity can hold e.g. several users is using a Set data
+         structure, that will be linked through a table relationship. The 
+         relationships this entity has are the following: 
+    </p>
+
+
+    <ul>
+        <li>Many to One field “user_fk” between Batch - User: 
+            A batch can only have one user and a user can have many Batches if the role is “Stakeholder”, “Admin”, or “Super Admin”. </li>
+        <li>One to Many Set “assignments” between Batch - Assignment:
+             A batch can own many Assignments and an assignment can only own one batch. </li>
+        <li>One to Many Set “apprentices” between Batch - User: A batch 
+            can have many apprentices whereas a User with role “Apprentice” can only have one batch. </li>
+    </ul>
+
+    <p>FAQ model - Entity <br>
+        As an entity (@Entity Annotation), the FAQ model will have its own repository,
+         and is composed of the following fields: </p>
+
+         <div class="imagenes">backend packages</div>
+
+        
+
+    <p>It is the only table that does not hold any relationship as it doesn't 
+        have any relevant information or linkage with the other entities. </p>
+
+    <p style="background-color: pink;">Full Entity Relationship Diagram. </p>
+
+    <div class="imagenes">backend packages</div>
+
+    <a id="topbutton" href="#top">Back to the Top </a>
+
+    <h5 class="subsubtitle"> >>DTOs</h5>
+
+    <p>It is not always a good idea for our API to expose the database entities to the client. 
+        Sometimes we want to change the type of data sent to the client, for example hiding sensitive data and
+         sending only what is necessary.  To achieve this, we can use a DTO which is an object that defines 
+         how the data will be sent over the network.  </p>
+
+    <p>The DTOs that we created aim to hide sensitive information to the client, and only provide what is necessary, 
+        as you can see below,we have the full details which protect the entity layer,
+         and short details for providing only the information that is needed. </p>
+
+         <div class="imagenes">backend packages</div>
+
+<h5 class="subsubtitle"> >>Controllers</h5>
+
+<p>The controller layer is responsible for processing incoming REST API requests, preparing a model, and returning
+     the view to be rendered as a response. The names of the methods are self-descriptive on what they do,
+      here is a list of all the endpoints based on the controller: </p>
+<p>Users </p>
+
+<ul>
+	<li>getAllUsers() </li>
+	<li>createUser(newUser ) </li>
+	<li>getOneUser( id ) </li>
+	<li>updateUserInfo(id, editedUser) </li>
+	<li>deleteUser( id) </li>
+	<li>getUserIDbyEmail(email) </li>
+	<li>getAllApprenticeUsers() </li>
+	<li>getAllStakeHolderUsers() </li>
+	<li>getAllStakeHolderAssignments(id ) </li>
+	<li>getAllStakeHolderTickets(id ) </li>
+	<li>getUserAssignments( id ) </li>
+	<li>getUserStatus(id ) </li>
+	<li>postDailyStatus(id) </li>
+	<li>getUserDailys( id ) </li>
+	<li>sendLearnedToday( id, learnedToday ) </li>
+	<li>getUserTickets(id) </li>
+	<li>updateUserPassword(password) </li>
+</ul>
+
+<p>Batches </p>
+
+<ul>
+	<li>getAllBatches() </li>
+	<li>createBatch(batchName, description, ownerID) </li>
+	<li>updateBatchInfo(id,  batchName, description,  ownerID,active ) </li>
+	<li>deleteBatch() </li>
+	<li>getOneBatch( id ) </li>
+	<li>getBatchAssignments( id ) </li>
+	<li>addNewApprenticeAndAddToBatch( id, newUser) </li>
+	<li>addApprenticeToBatch( batchId, userId) </li>
+	<li>addOwnerToBatch(batchId, userId) </li>
+</ul>
+
+<p>Assignments </p>
+
+<ul>
+	<li>getAllAssignments() </li>
+	<li>getOneAssignment(UUID id) </li>
+	<li>updateAssignmentInfo(id, editedTask ) </li>
+	<li>deleteAssignment( id) </li>
+	<li>getAllAssignmentSolutions(id) </li>
+	<li>sendIndividualAssignment( id, newAssignment ) </li>
+	<li>sendBatchAssignment( id, toAssign)  </li>
+	<li>createWeeklyAssignment( id, newAssignment) </li>
+	<li>postAssignmentSolution(assignmentID, userID, file, apprenticeReply )  </li>
+	<li>postAssignmentSolutionFeedback(assignmentID,  userID, score, feedback)  </li>
+	<li>getDownload(assignmentID,  userID) </li>
+</ul>
+
+<p>Ticket</p>
+<ul>
+	<li>getAllTickets() </li>
+	<li>getTicketById(d) </li>
+	<li>newTicket( id,newTicket) </li>
+	<li>updateTicket(id, feedback) </li>
+	<li>deleteTicket( id) </li>
+	
+</ul>
+
+<p>Login </p>
+
+<ul>
+	<li>register(request) </li>
+	<li>login(request) </li>
+	<li>getFAQ() </li>
+	<li>postFAQ(newFaq) </li>
+	<li>editFAQ(id, editedFaq) </li>
+	<li>deleteFAQ(id) </li>
+</ul>
+
+
+<a id="topbutton" href="#top">Back to the Top </a>
+<h5 class="subsubtitle"> >>Repositories</h5>
+<p>In the repository layer, we annotate our interface with the @Repository annotation 
+    to let know Spring through classpath scanning that this will be a repository. 
+    Then, we extend our interface to the CrudRepository from JPA so we can use filtering,
+     paginating and functions for querying specific data that are methods included with the JPA dependency.
+      The purpose of this layer is for providing pre-built functionality & other convenient 
+      features for querying, altering, & accessing your data from a connected data base or other 
+      data storage system. In our case via this repository, we make queries to the PostgreSQL database,
+       the crud repository saves us from manually writing the queries. Additionally, in the repositories 
+       we used projections to send back data to the client in form of a DTO rather than directly sending the
+        entity that will be explained in the following section. </p>
+
+        <h5 class="subsubtitle"> >>Spring Data JPA - Class based Projection </h5>
+
+        <p>As we stated before, the goal of a DTO class is to provide an efficient and strongly 
+            typed representation of the data returned by a query. A DTO consists of a set of attributes, 
+            getters and setters and a constructor to set all of the class attributes. In order to use a 
+            specific DTO for projection you need to type an SQL query, but instead of selecting as we would 
+            normally do, we need to use a constructor expression in the query. It describes a call of the constructor.
+             It starts with the keyword new, followed by the DTO class's fully-qualified class name and 
+             a list of constructor parameters this is executed by using the @Query annotation. The persistence provider
+              then executes a query that selects the columns mapped by the referenced entity attributes and 
+              executes the described constructor call. 
+        </p>
+
+        <p>These projections can be seen in the repository files of the project, we need to explicitly 
+            state in our DTO class what kind of information we need, then in our repository we can start 
+            writing a query with the @Query annotation. To better understand the instance method by SQL query
+             we can see this example: </p>
+
+        <p>SELECT new com.apprenticeplatform.dtos.ShortBatchDetail(b.id, b.batchName, b.description, 
+            bo.id, bo.firstName, bo.lastName, b.active) FROM Batch b JOIN b.batchOwner bo WHERE b.active = true </p>
+        <p>As we can see, we need to instance our DTO making use of the new keyword, followed by the path
+             where our DTO is and explicitly populating the fields our DTO needs to be built using the SQL query.
+              Note that data types pulled from our tables need to strictly match for the DTO data types to be built. 
+              This way we can extract any information we need from our tables without only relying on the JPA interface 
+              built in methods. </p>
+
+        <p>The service layer is there to provide logic to operate on the data sent to and from
+             the data access object and the client. This is good practice arising from what is
+              known as the single responsibility principle. The Service layer's single responsibility
+               is to do any logic required with the data received by the Controller. We use layers to 
+               allow us to abstract away the underlying implementation so we that we can easily change it. 
+               This way the controller layer will not be implementing any logic, and instead directly call 
+               the methods from our services. </p>
+               <a id="topbutton" href="#top">Back to the Top </a>
+
+        <h5 class="subsubtitle"> >>Services </h5>
+        <p>Frontend: This is something that I would have liked to fix in time. I forgot to fix the 
+          problem with the buttons that aren't hidden when a module comes out. <br>
+          Also, sometimes the application didn't reload when it was a new time or when you clicked Done/Undone 
+          It happened because I used a variable that in time doesn't change because the component isn't active. 
+          I should connect better that section. It's because I have to practice the use of hooks, and I might need
+          to understand better how the hooks are working in React. Moreover, I should make betters practices when I'm building
+          components, it would make it easy to fix and get improvements in the code. 
+          </p>
+
+          <h5 class="subsubtitle"> >>Security </h5>
+
+          <p>Here are the contents of the config package. </p>
+
+          <div class="imagenes">backend packages</div>
+
+          <p>This part of the application focuses on configuring the REST API's security to meet our needs. </p>
+
+          <p>Initially in our User entity we implement User Details 
+            to store user information which is later encapsulated into Authentication objects.  </p>
+
+            <p>Files:</p>
+
+            <ul>
+                <li>ApplicationConfig: In this file we declare @Beans that we will later use 
+                    in the other configuration files. The following are the Beans declared: 
+                    userDetailsService() for finding the user by email address, authenticationProvider()
+                     a class that can process a single Authentication implementation, here we set 
+                     the UserDetailsService (email), and password to perform authentication. authenticationManager() 
+                     container for authentication providers, giving a consistent interface to them all,
+                      and passwordEncoder() which uses BCryptPasswordEncoder() to save the user's hashsed 
+                      password to the database. </li>
+                <li>JwtAuthenticationFilter: In this class we extend the OncePerRequestFilter
+                     which tells SpringBoot, so that we guarantee that our specified filter is
+                      executed once per given request. In the overridden method doFilterInternal()
+                       we extract the header from the client request, we check for “Bearer” at the 
+                       beginning of the header if it's not present it will simply continue with the 
+                       rest of the filters, otherwise it will begin extracting the username and checking
+                        if it's in the database, if this is succesfull then we generate a new token,
+                         and set the token details to be sent back to the client. </li>
+                <li>SecurityConfiguration: In this class we will use some of the beans declared 
+                    in the Application config, in the method securityFilterChain is where we really 
+                    configure our app's security, the first thing that we do is disable the cors and 
+                    csrf, then using the requestMatchers, we specify any endpoints that we want to 
+                    leave without security such as login and register. Then we secure the rest of 
+                    the endpoints so that all users must be authenticated to access such endpoints. 
+                    Before the http.build() we add more information, we pass in the authenticationProvider
+                     bean, and also specify to add the jwtAuthFilter. </li>
+            </ul>
+
+            <p>It is important to note that in order for this to 
+                successfully work prior to this we had utilized the services specific for the authentication. </p>
+
+                <div class="imagenes">backend packages</div>
+
+                <p>Files:
+                </p>
+
+                <ul>
+                    <li>AuthenticationService: In this class we refer back to some 
+                        of the beans created in config and have two main methods,
+                         register and authenticate. In the register() method we take 
+                         in a request which includes all of the user info, and where we
+                          save the user to the repository, we also generate a jwt token.
+                           Here an AuthenticationResponse is getting prepared to be sent 
+                           back with the jwt token. In the authenticate() method we take
+                            in a request containing an email and a password and then we check if 
+                            the user is valid, then we generate a token and send it to the client. </li>
+                    <li>JwtService: This class has methods that deals with the aspects of token generation, 
+                        checking if it's valid, the expiration, adding specific claims to be sent back to the client. </li>
+                </ul>
+
+        
+    <h5 class="subsubtitle"> >>Database </h5>
+
+    <p>The database management system used for storing the application data was 
+        PostgreSQL. The requests to the API are handled by  </p>
+        <p>The database is hosted by Amazon AWS with Amazon RDS service. </p>
+
+        <a id="topbutton" href="#top">Back to the Top </a>
+
+        <h1 class="subtitle" id="frontend">Frontend</h1>
+       
+      
+        
+        
+        <div class="twelve columns" style="margin-top: 5%">

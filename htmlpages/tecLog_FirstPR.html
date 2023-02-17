@@ -52,15 +52,138 @@
           <h6>This technical log it's about my first Pull Request in Life. 
           </h6>
           <h3 class="subtitle">CONTEXT</h3>
-         
-          <div><img src="../images/problem's note.png" alt="important note"></div>
+          <h5 class="subsubtitle"> >>What is NetworkX ? </h5>
+            <p>NetworkX is a Python package for the creation, manipulation,
+                 and study of the structure, dynamics, and functions of complex networks. 
+                <a href="https://github.com/networkx/networkx">NetworkX Repository</a></p>
+
+                <p>This project is made in python language 100%, but they have documentation 
+                    in this link <a href="https://networkx.org"> networkx.org</a>
+                    where a user can find all functions, graphs, or information that they need to 
+                     manage the package. Also, it containes reference for books, documents, Research.
+                     This library manage equations estabished in math concepst. 
+                </p>
+          <h5 class="subsubtitle"> >>Issue </h5>
+          <p>The next picture can show you the issue that I decided to participate. 
+            You can go by this <a href="https://github.com/networkx/networkx/issues/6428#event-8529916583">
+                Link
+            </a>
+          </p>
+          <div><img src="../images/First Pull Request/issue.png" alt="issue photo"></div>
+          <p>I decided to select this because sounds something easy and it was in a python repository. 
+            I feel confident using python. Also, it's not easy to find an issue available so I'm glad
+            these people gave me the opportunity.  <strong>This is something simple but it become
+                a big opportunity for me. </strong>
+          </p>
     
         <a id="topbutton" href="#top">Back to the Top </a>
          <h3 class="subtitle">Solution</h3>
+          <p>For this process I started getting Download the repository in my computer. I think
+            this <a href="https://dev.to/itnext/how-you-can-contribute-to-oss-36id"> guide</a> is really
+            helpful to understand how to start working in a project. </p>
+            <p>When I look through the files in the repository, I realized that there was not the 
+                construction I was expecting. I had in mind the apprentice universe app using React or
+                an HTML folder. Instead, I found a folder with .py and others with .rst  
+                files. I was confused about where was the documentation. 
+            </p>
+
+            <div><img src="../images/First Pull Request/files .rst.png" alt="files .rst in package" 
+                style="width: 30%;"></div>
+
+                <p>I looked for the exact section that the reference that I want to edit was. It took 
+                    me some time because I found the function but it wasn't a python file or any kind 
+                    of language I get used.  </p>
+
+                    <div><img src="../images/First Pull Request/function in .rst.png" alt="function .rst in package" 
+                       ></div>
+
+            <p>Then, I decided to search what was .rst, in wikipedia I found "reStructuredText 
+                (RST, ReST, or reST) is a file format for textual data used primarily in 
+                the Python programming language community for technical documentation."
+            <br>
+            I found information about this format and I realized why I couldn't understand. 
+            Everything become more clear and I got an idea about where to edit the text. I looked for 
+             in the python files where was the function </p>
+
+             <p>I found the reference!</p>
+
+             <div><img src="../images/First Pull Request/how .rst text shows in code.png" alt="reference to edit" 
+                style="width: 70%;"></div>
+            <p>Also, I learned what was a DOI. Again, wikipedia said "A digital object identifier
+                is a persistent identifier or handle used to uniquely identify various objects, 
+                standardized by the International Organization for Standardization. DOIs are an 
+                implementation of the Handle System; they also fit within the URI system"
+                Part of the request was to add the Link to access to the reference.</p>
+
+                <p>Whith this in mind, I just edited the reference with the APA format. 
+                    Then, I went to make my pull request as the instructions in the repository
+                    said <a href="https://github.com/networkx/networkx/blob/main/CONTRIBUTING.rst">
+                        CONTRIBUTING guide
+                    </a>. However, I had a problem. My pull request didn't past the boot checking. 
+                    It failed in style. My first try had an extra file that was build when I installed
+                    PIP, but there wasn't instructions for a fail. Then, I tried to delete my pull request.
+                    It was night and I was afraid that they tell me something about my mistake. 
+                    I didn't delete it but I tried to make a second with just the correction and
+                     confirming that there wasn't any other extra file. I made this tried but until the morning.
+                     At night I received an email from a manager that told me the steps to reverse my pull request.
+                     I appreciated it because I didn't ask him and he send me help, but it was too late because I already did a second 
+                     request. That taught me that I didn't look for an option to reverse my pull request, 
+                     the fear to make a mistake blind me, also I was tired. So the next time, 
+                     I want to be patient to find a solution, and if I'm tired I may wait and rest a little. 
+                </p>
+
+                <p>In the morning, my second pull request was faster to make, but it also failed the style check. 
+                    This time I didn't know why. I checked the way I did the link in reStructuredText format 
+                     but it was correct. Then, this time I waited to see if I received a comment 
+                     that could help me. 
+                </p>
+
+                <div><img src="../images/First Pull Request/fail Style check.png" alt="reference to edit" 
+                    style="width: 70%;"></div>
+
+            <p>After few minutes, I reveid a comment that said "I took the liberty of pushing 
+                up a minor change to better conform to the docstring standard, as well as
+                 fix the linting error. LGTM, thanks @Blueclaus13 !" I was impressed. 
+                 Did that mean that It it's approved? Why did it fail?</p>
+
+                 <p>This is a photo of the correction in the code:</p>
+
+                 <div><img src="../images/First Pull Request/Correction and approved.png" alt="reference to edit" 
+                    style="width: 70%;"></div>
+        
+               
+            <p> Then, I decided to ask What was the reason because this fail? I couldn't notice a 
+                difference between my wrong line and her correction. She answered me
+                "Indeed the diff from the failed CI run is a little confusing... 
+                the reason it failed was because there was an extra whitespace at the end of the line (i.e. _ )."
+            </p>
+            <p>I was really happy because It was my first pull request.</p>
+
          
         <a id="topbutton" href="#top">Back to the Top </a>
 
         <h3 class="subtitle">Conclusions / Learning</h3>
+
+        <p>The correction in my solution was that they add a reference footnote that I didn't notice was
+            the correct format I needed to follow. I could avoid this correction if I read the 
+            contribution guide better. It has a section where they explained how are the changes
+             in a reference. 
+        </p>
+
+        <div><img src="../images/First Pull Request/Reference example.png" alt="reference to edit" 
+            style="width: 70%;"></div>
+
+        <p>Moreover, this first try helped me to understand how is the pull request,
+            what are the open sources, how to introduce myself for a project, 
+            and a little about how to interact. As I see it right now (because I'm working on a more complicated
+            assignation in a Java repository), this was a little assignation that taught me a lot. 
+            I should say that it taught me more about myself because I realized that it got complicated
+            to ask or resolve problems because I'm afraid to make a mistake in front of others. 
+            Becoming conscious is a big discovery but the true challenge is changing it. 
+        </p>
+        <p>Hopefully, this become easier with practice and getting confidence.</p>
+
+
         
       </div>
      

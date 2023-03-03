@@ -55,8 +55,12 @@
           </h6>
           <h3 class="subtitle">CONTEXT</h3>
           <h5 class="subsubtitle"> >>What is happenings ? </h5>
+          <p>Happenings was built with an idea of documenting your journey. 
+            You can create a timeline and either keep it private to yourself 
+            or generate a public url for you to showcase your achievments / journey.</p>
+            <p><a href="https://github.com/s-ashwin/happenings">Repository happenings</a></p>
             
-                </p>
+                
           <h5 class="subsubtitle"> >>Issue </h5>
           <p>The next picture can show you the issue that I decided to participate. 
             You can go by this <a href="https://github.com/s-ashwin/happenings/issues/9">
@@ -65,12 +69,85 @@
           </p>
           <div><img src="../images/react pull Request/initial state.png" alt="initial state second pull request" 
             style="width: 50%;"></div>
-          
+            <p>I chose this issue because I got experience fixing problems
+                in React with the apprentice app. I feel capable to help someone when they want an enhancement
+                with the UX. 
+            </p>
     
         <a id="topbutton" href="#top">Back to the Top </a>
 
          <h3 class="subtitle">Solution</h3>
+         <p>The first step is to set up the project on my local disk. I follow the instructions
+            to set up the project but this repository is pretty new so it has instructions to set up a 
+            google cloud where using supabase.com we can build a Database. I followed everything but 
+            it was pretty confusing.
+         </p>
+         <p>When I start this issue I was confoused about what the owner needed. I decided to ask him 
+             by Discord. Before I started a conversation, I decided to move the code a little to show him a 
+             proposal of what I had on mind. I checked the library that he had used. This was ant design. 
+             Before in other projects, I had used Material U, this library wasnt't too different from that.  
+         </p>
+
+         <div><img src="../images/react pull Request/first proposal.png" alt="first proposal"  style="width: 50%;"
+            ></div>
+         <p>My first proposal was to make the fields red when the user hasn't filled in them. When the modal opened
+            the fields had to be red. Now, I think that isn't aesthetic but at that moment I only had in mind 
+             to make it different than the red asterisk. Also, I add a help; if the user erased the field 
+             a message under the input will tell "Please input a ___"
+         </p>
+
+         <div><img src="../images/react pull Request/messageHelp.png" alt="messageHelp" style="width: 50%;" 
+            ></div>
+
+            <p>I talked with the owner to give him this proposal, but he suggested something different. 
+                He didn't like the red input boxes, he wanted to get ripped the asterisks, and 
+                he wanted the under help in the inputs. 
+            </p>
+            <p>Then, I found another way to set required fields using tooltips on them</p>
+            <div><img src="../images/react pull Request/tooltips.png" alt="UsingTooltips" style="width: 50%;" 
+                ></div>
           
+                <p>He liked more this idea and he asked if I could add a tooltip to the save button and make the 
+                    button disabled unless those required fields were filled in. I did that, but it wasn't easy 
+                    because of the library ant design. Then, I found a way to personalize the modal component from 
+                    the library. 
+                </p>
+
+                <p>My first pull request on this project:</p>
+                <div style="display: flex; width:100vh; flex-flow: row wrap">
+                    <img src="../images/react pull Request/buttontooltip.png" alt="ButtonTooltips" style="width: 40%;" >
+                    <img src="../images/react pull Request/block button until all fields fiil in.png" alt="button block" 
+                    style="width: 40%;" >
+                    <img src="../images/react pull Request/first tried.png" alt="first tried" 
+                    style="width: 40%;" >
+                    </div>
+                
+
+                <p>I received some corrections in the revision of my code. I did some mistakes in keeping the 
+                    style of the code: for example; I used a function with a Spanish name, I didn't use comments 
+                    to explain my code and I left unnecessary code of my trieds. 
+                </p>
+
+                <p>I think that happened because it was night when I did my pull request so I did it fast without check the 
+                  rest of the edited file. 
+                </p>
+
+                <p>Finally, I corrected the complete pull request and I summited the changes</p>
+
+                <p>Also, he asked me to change the tooltip that was next to the blocked save button. I change this to have
+                  the tooltip when the user set the cursor over the button. 
+                </p>
+
+                <div><img src="../images/react pull Request/Screen Shot 2023-03-03 at 15.18.43.png" alt="initial state second pull request" 
+                  style="width: 50%;"></div>
+
+                <p>The final result is the modal with the tooltips in the required inputs and the "saved" button blocked 
+                  if the required inputs aren't filled in. Also, when the user fills in the input but for any reason they 
+                  erased it, a red commend asking to fill it will appear under the required input. 
+                </p>
+
+                <p>Currently, I'm waiting to receive an approved request for this issue. </p>
+
 
           
 

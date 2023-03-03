@@ -1,0 +1,224 @@
+$width: 300px;
+$padding: 10px;
+$bgcolor: rgb(52, 52, 52);
+$hover-color: rgb(23, 23, 23);
+$width-collapsed: 40px;
+
+@mixin font-family($weight: 400, $size: 1rem ){
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: $weight;
+    font-size: $size;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    margin-left: $width-collapsed;
+    background-color: white;
+}
+.body-expanded{
+    margin-left: $width;
+}
+
+#sidebar{
+    background-color: $bgcolor;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 70px;
+    transition: width 0.2s linear;
+   
+    a{
+        color: white;
+        text-decoration: none;
+
+    }
+
+    #header{
+        box-sizing: border-box;
+        border-bottom: solid 1px $hover-color;
+        height: min-content;
+         
+        #title{
+            box-sizing: border-box;
+            overflow: hidden;
+            vertical-align: middle;
+        }
+
+        #menu-btn{
+            vertical-align: middle;
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+            width: $width-collapsed;
+            box-sizing: border-box;
+
+            .btn-hamburger{
+                background-color: #fff;
+                width: 100%;
+                height: 2px;
+                margin: 5px 0;
+            }
+        }
+        #menu-btn:hover{
+            background-color: $hover-color;
+        }
+
+
+    }
+
+    #profile{
+        border-bottom: solid 1px $hover-color;
+        padding: $padding;
+        text-align: center;
+        font-size: 2em;
+        padding: $padding 0;
+        overflow: hidden;
+
+        #photo{
+            box-sizing: border-box;
+            padding: $padding;
+            margin: 0 auto;
+
+            img{
+                border-radius: 50%;
+                width: 60%
+            }
+        }
+
+        #name{
+            font-size: 1em;
+            padding: $padding 0;
+            overflow: hidden;
+        }
+    }
+
+    #menu-items{
+        overflow: hidden;
+
+        .item{
+            width: $width;
+
+            a{
+                display: block;
+            }
+            a:hover{
+                background-color: $hover-color;
+                
+            }
+        }
+
+        .separator{
+            height: 1px;
+            border-radius: solid 1px $hover-color;
+            margin: 15px 0;
+        }
+    
+
+            
+
+        .icon{
+            display: inline-block;
+            font-size: 14px;
+            vertical-align: middle;
+            overflow: hidden;
+            display: inline-block;
+            box-sizing: border-box;
+            padding: $padding;
+            width: $width-collapsed;
+        }
+
+        .title{
+
+            font-size: 14px;
+            vertical-align: middle;
+            overflow: hidden;
+            display: inline-block;
+            padding: $padding 0;
+
+        }
+    }
+
+}
+
+// #sidebar:hover{
+//     width: 280px;
+//     transition: all 0.5s ease;
+// }
+
+
+#sidebar:hover{
+    width: $width;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+    
+
+    #header {
+        #title{
+            display: inline-block;
+            width: calc(100% - 50px);
+            margin-right: -5px;
+            padding: $padding;
+            height: 50px;
+
+            span{
+                width: calc($width - $width-collapsed - 5px);
+                overflow: hidden;
+                display: inline-block;
+            }
+
+        }
+    }
+
+    #profile{
+        #photo{
+            width: 200px;
+        }
+        #name{
+            width: 100%;
+        }
+    }
+}
+
+#sidebar{
+    width: $width-collapsed;
+    #header{
+        #title{
+            width: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    #profile{
+        #name{
+            display: none;
+        }
+    }
+    
+
+    .item{
+        width: 100px;
+    }
+}
+
+.main-container{
+    color: white;
+}
+
+.sticker{
+    width: 100%
+}
+
+#out{
+    position: fixed;
+    bottom: 0;
+
+}
+
+/*header*/
+
+

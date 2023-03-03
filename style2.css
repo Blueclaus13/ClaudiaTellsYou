@@ -1,0 +1,165 @@
+body {
+  padding: 0;
+  margin: 0;
+  margin-left: 40px;
+  background-color: white;
+}
+
+.body-expanded {
+  margin-left: 300px;
+}
+
+#sidebar {
+  background-color: rgb(52, 52, 52);
+  color: white;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  width: 70px;
+  transition: width 0.2s linear;
+}
+#sidebar a {
+  color: white;
+  text-decoration: none;
+}
+#sidebar #header {
+  box-sizing: border-box;
+  border-bottom: solid 1px rgb(23, 23, 23);
+  height: min-content;
+}
+#sidebar #header #title {
+  box-sizing: border-box;
+  overflow: hidden;
+  vertical-align: middle;
+}
+#sidebar #header #menu-btn {
+  vertical-align: middle;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  width: 40px;
+  box-sizing: border-box;
+}
+#sidebar #header #menu-btn .btn-hamburger {
+  background-color: #fff;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+}
+#sidebar #header #menu-btn:hover {
+  background-color: rgb(23, 23, 23);
+}
+#sidebar #profile {
+  border-bottom: solid 1px rgb(23, 23, 23);
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  padding: 10px 0;
+  overflow: hidden;
+}
+#sidebar #profile #photo {
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0 auto;
+}
+#sidebar #profile #photo img {
+  border-radius: 50%;
+  width: 60%;
+}
+#sidebar #profile #name {
+  font-size: 1em;
+  padding: 10px 0;
+  overflow: hidden;
+}
+#sidebar #menu-items {
+  overflow: hidden;
+}
+#sidebar #menu-items .item {
+  width: 300px;
+}
+#sidebar #menu-items .item a {
+  display: block;
+}
+#sidebar #menu-items .item a:hover {
+  background-color: rgb(23, 23, 23);
+}
+#sidebar #menu-items .separator {
+  height: 1px;
+  border-radius: solid 1px rgb(23, 23, 23);
+  margin: 15px 0;
+}
+#sidebar #menu-items .icon {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 40px;
+}
+#sidebar #menu-items .title {
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block;
+  padding: 10px 0;
+}
+
+#sidebar:hover {
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
+#sidebar:hover #header #title {
+  display: inline-block;
+  width: calc(100% - 50px);
+  margin-right: -5px;
+  padding: 10px;
+  height: 50px;
+}
+#sidebar:hover #header #title span {
+  width: 255px;
+  overflow: hidden;
+  display: inline-block;
+}
+#sidebar:hover #profile #photo {
+  width: 200px;
+}
+#sidebar:hover #profile #name {
+  width: 100%;
+}
+
+#sidebar {
+  width: 40px;
+}
+#sidebar #header #title {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+#sidebar #profile #name {
+  display: none;
+}
+#sidebar .item {
+  width: 100px;
+}
+
+.main-container {
+  color: white;
+}
+
+.sticker {
+  width: 100%;
+}
+
+#out {
+  position: fixed;
+  bottom: 0;
+}
+
+/*header*/
+
+/*# sourceMappingURL=style2.css.map */

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Apprentice content by Claudia Madrid</title>
+  <meta name="Journal Technical Log Sirix Project" content="Thisi= is the documentation of my
+   Journal Leaning for resolving Sirix Issue">
+  
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/styles.css">
+
+<!-------------UNICONS------------------------------------>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release-pro/v4.0.0/css/solid.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+
+</head>
+<body  style="background-color: whitesmoke" >
+    <div class="container" style="background-color: white ;">
+          
+      <header class="container twelve columns "  style=" border-radius: 20%;">
+        <div class="two columns " style="background-color: white; border-radius: 50%;"><img id="banner" src="../images/Icon_banner.png"  alt="Imagen banner for every page"></div>
+        <h1 class="title nine columns "><strong>Technical Log Sirix Project</strong></h1> 
+      </header>
+  
+  
+    <main class="twelve columns container"  style="background-color: whitesmoke">
+
+        <nav class="navPage offset-by-two column container" >
+          <h4 class="one-half column"><a href="../index.html">Claudia's Posts</a></h4>
+          <h4 class="one-half column"><a href="aboutMe.html">About This Blog</a></h4>
+        </nav>
+       
+        <h1 class="subtitle">OVERVIEW</h1>
+        <h6>This technical log contains the story about how this module in apprentice I did an asportation in serializing and deserializing
+            some pages. The serialization logic already existed, but my work consisted of translating everything into another.
+            document based on another module that was did these changes. You'll see my communication with the owners and the
+            kind of issues I had to develop this assignation. Finally, I'll give you a conclusion about these issues. 
+        </h6>
+
+        <h1 class="subtitle">CONTEXT</h1>
+        <p>SirixDB is an embeddable, temporal, evolutionary database system, which uses an 
+            append-only approach to store immutable revisions. It keeps the full history of each resource.
+             Every commit stores a space-efficient snapshot through structural sharing. It is log-structured and 
+             never overwrites data. SirixDB uses a novel page-level versioning approach.
+            <a href="https://github.com/sirixdb/sirix">Github Sirix project</a></p>
+        <a href="https://github.com/sirixdb/sirix/issues/577">Issue link</a>
+
+        <div><img src="../images/sirix/issue.png"
+            alt="Issue " style="width: 50%;"></div>
+            <p>When I chose this issue I had in mind that serialization/ deserialization sounds like something easy that 
+                I could understand. Also, it motivated me that already existed an example in the same project. I'm glad 
+                that wasn't as easy as I thought. It brought me out of my conform zone trying to communicate for understanding
+                the project, learning new concepts, and for sure debbuging to find errors.
+            </p>
+
+
+        <a id="topbutton" href="#top">Back to the Top </a>
+
+        <h1 class="subtitle">DEVELOPMENT</h1>
+
+        <p style="background-color: pink;">>Set Up</p>
+        <p>My first step was to install the repository and understand its constitution. There my first incident happened
+            because I had some trouble making run the project. I used grandle because I saw some files in the repository and instructions 
+            in README file. However, the project was failing when I tried to run it. I also, see some files of maven so I
+        tried to change to use maven, but I think they had a recent migration from maven to grandle, so again I change to 
+    grandle. The next photo shows you the message when the project fail running.  </p>
+
+    <div><img src="../images/sirix/erros in installation.png"
+        alt="Fail for Java version " style="width: 50%;"></div>
+
+        <p>I spend a day trying to figure out why my IDEA was taking version 17 when I already had version 19
+            installing. I had both versions installed in my IDE. The solution was to delate version 17. I tried 
+            to change the configurations but still, it didn't want to take the 19 for default. 
+        </p>
+
+        <p>Then, I start looking to the folders and modules to understand how they were build and connecte. 
+            My changes had to be on page folder but this was connected with node, and both were part of 
+            sirix-core module. The project had 9 modules, that means that it was the first big project I have seen. 
+        </p>
+        <div><img src="../images/sirix/modules.png"
+            alt="modules " style="width: 30%;"></div>
+            <div><img src="../images/sirix/node file, page file.png"
+                alt="modules " style="width: 30%;"></div>
+
+        <p>Inside Page folder, there are all the pages that I need to serialize/deserialize. The configuration already
+            have the serialized and deserialized but they were in the constructor and in a method named serialize from an 
+            interface named Page. 
+        </p>
+        <div><img src="../images/sirix/Page folder.png"
+            alt="page folder " style="width: 30%;"></div>
+
+        <p>Something difficult that I had to overcome was the nervousness to make questions to the owners.
+            The context of the issues had some details that I couldn't understand but I wasn't sure if that 
+            was because I'm naive or if an experienced programmer could do the issue with only that information. 
+            Then, I asked some people close to me for a guide about what to do, how to start, and where to look for 
+            answers. <br>
+            That really made me feel out of my comfort zone. Later, I realized that I had to ask questions for the owner 
+            if I want to understand the issue and the project. I did it and I received the first explication of
+            my issue that you can see in the next picture. 
+        </p>
+
+        <div><img src="../images/sirix/first answer for my questions.png"
+            alt="first answer " style="width: 60%;"></div>
+
+        <p>That question came from my trying to understand how the serialize and deserialization was already made 
+            in the pages folder, because It was already there but I didn't understand what kind of changes
+            I need to do it on the folders if the configuration was done. 
+        </p>
+
+        <p>I received a good response from the owners because they where answering my questions and helping me 
+            understanding the project. 
+        </p>
+
+        <p style="background-color: pink;">>Changes</p>
+        <p>I started making changes on PageKind which was an enum. The objective was to have a serialize and 
+            deserialize method for every page. They already existed but they only call the inside method in the page and
+          the constructor.  </p>
+
+          <div><img src="../images/sirix/old structure in PageKing for a page.png"
+            alt="old structor " style="width: 60%;"></div>
+
+        <p>The next pictur is the logic that was in the serialization method for one of the pages. Every page had
+            different logic but some of them were similar. The point of showing you this old code is that you (reader)
+            have an idea about the reason for the new changes. For the deserialization changes, they were in the constructor
+            of each page. I'll show it later. 
+        </p>
+
+        <div><img src="../images/sirix/old serialization.png"
+            alt="old serialization " style="width: 60%;"></div>
+            <p>Something I noticed, and I told the owner, of some errors in the existing logic. For example, I 
+                point in the last picture the line 143 which should have currentMaxLevelOfIndirectPagesMap.size() instead of 
+                maxNodeKeys.size(). He told me that it was a mistake. 
+             </p>
+
+             <p>I started the changes in the PageKind on CASPage. In the picture below, you'll see the new code that 
+                I adapted it here in the enum. I had a mistake that I would discover later. The owner wanted to delete 
+                the serialize method from the Page interface. That means 224 line was wrong. I had to serialize the 
+                delegate page in a different way. But at this point, I didn't know that. I still was trying to understand 
+                the code, and what meant those lines.  Also, I didn't catch that he wants to delate the serialize method 
+                from Page.
+             </p>
+             <div><img src="../images/sirix/first changes in serialize. Asking for the name errors.png"
+                alt="new serialization " style="width: 60%;"></div>
+
+            <p>For the deserialization was something similar, I just changed the construction logic and made everything in 
+                PageKind, then I started the new page just sending the new data as attributes. 
+            </p>
+            <div><img src="../images/sirix/first changes in deserialization.png"
+                alt="new desserialization " style="width: 60%;"></div>
+
+                <p>When I did the first page I continued making the changes for the others. In total 10 pages more to change the 
+                    logic to pageKing. If all of them were similar I would have finished faster, but there were a couple
+                    of them that were complicated and large. For example, KeyValueLeftPage was the most difficult to change. 
+                    It has some delegates different than other pages. <a href="https://github.com/sirixdb/sirix/pull/585/commits/ea150db5d4b90f839ec45d9c70b9474b327a7b86">
+                        here check the changes in KeyValueLeftPage
+                    </a>
+                </p>
+
+            <p>When I did make the changes for serialize/deserialize, I look for a way to test my code. I asked the owner
+                if he had some tests. I did the test in the sirix-core module. All of them failed. I knew they could fail, but
+                I was nervous about how to find the mistakes because I had some doubts about logic. I started asking 
+                 the owner what he belived. He suggested making debugging to know why it failed. It probably was in my new methods, 
+                 also he asked me to delete the serialize method from Page. At the first moment, my failed test where because 
+                 I deleted that method and it was used in other places of the core module. Then, I was stuck in the section
+                 where the fail redirected me to my new methods. I decided it was because I had something missed form the old
+                 serialization. After few days working on it, I descovered was the delegates!! I deleted them after I deleted
+                 the serialize method from Page. I thought they weren't important because I had the idea that the delegate
+                 was the serialization code I translated.  You can check the second picture below in line 121. I thought it meant
+                 the serialized method on the specific page but it was more than that. 
+            </p>
+
+            <div><img src="../images/sirix/fail in test.png"
+                alt="failed tests " style="width: 60%;"></div>
+
+                <div><img src="../images/sirix/old structure in PageKing for a page.png"
+                    alt="failed tests " style="width: 60%;"></div>
+
+            <p>I got the conclusion that my final errors came from my serialization because I found that some references 
+                weren't initialized. A value -15 is a default value when they haven't stared. 
+            </p>
+
+            <div><img src="../images/sirix/references without right values.png"
+                alt="failed tests " style="width: 60%;"></div>
+
+            <p>I took one and a half days to develop a way to serialize the delegate from every page because every page could
+                have a different delegate and also more than one. I did another global method in PageKind to use on every Page
+                that has the possibility to serialize with different delegates. At that point, I received a suggestion from the owner.
+                He told me to use a switch. I was confused about how to make the delegate serialization if we didn't have the serialize
+                method from the page. There the idea of a global method was suggested and he liked the idea. 
+            </p>
+            <p>I fixed that mistake but I still had another bug somewhere because the test didn't pass, but the error 
+                was different so that was good. I got stuck a little looking for where that mistake come. I already have an idea from RecordPage, one of the complicated pages that I changed. With debugging, I realized that in that 
+                point the data was lost after a deserialization, the "source" attribute that contained the data serialized got empty 
+                in the middle of the deserialization. I wasn't sure why that happened. So I asked the owner for a hint haha, a light 
+                in the tunnel. Then he asked, are you sure that all the logic is copied in the same sequence? There I remembered that 
+                I changed a declaration of variables in the deserialization. They were between the code but I set that variable 
+                at the start of the method. The owner didn't have any idea that it was the problem but his experience
+                 told me a clue to find in my memory the answer. Finally, I did the changes and the test started passing. 
+            </p>
+
+            <div><img src="../images/sirix/overcomming test.png"
+                alt="failed tests " style="width: 60%;"></div>
+
+                <p>We were so exited that we already had this overcome. The owner told me that this was important for his project  </p>
+
+                <div><img src="../images/sirix/comment.png"
+                    alt="failed tests " style="width: 60%;"></div>
+
+            
+
+
+
+          
+    
+
+        
+        <p style="background-color: pink;">Model</p>
+        <p style="background-color: pink;">Model</p>
+
+        <div><img src="../images/TodoApp/TaskClass.png"
+            alt="Picture of variables in Class Task" style="width: 20%;"></div>
+        
+
+        
+
+
+    </main>
+        <footer></footer>
+
+    
+    <!-- End Document
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+</html>

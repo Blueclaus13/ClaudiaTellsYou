@@ -80,6 +80,38 @@
             </p>
             <h3 class="subtitle" id="Backend">Main differences I realiced using Redux-Toolkit VS Redux-Core</h3>
 
+            <p>With toolkit you should build your slices and store them in configurationStore() function. With the selector you can 
+                choose wich one you need in the component. 
+            </p>
+            <p>With redux-core in ApprenticeUniverse, I used just an index of reduces that is colled in createStore() function. </p>
+
+            <div><img src="../images/Redux-app/Screen Shot 2023-05-02 at 19.34.13.png" alt="Store folder" 
+                style="width: 35%;"></div>
+
+            <p>I feel that the toolkit is more helpful because the Slices make it easy to read actions, logic, and initialization.
+                If someone is new to the project, I feel they can get used to it faster. 
+            </p>
+
+            <div><img src="../images/Redux-app/Screen Shot 2023-05-02 at 19.43.32.png" alt="Slice UI" 
+                style="width: 35%;"></div>
+
+            <p>You can call an action with the dispatch from Redux. It can be in a component or in a file with functions(Action Creators)
+                If the app is big, I feel the action creators are more useful. It would be something that I would have used in 
+                ApprenticeUniverse if I would have known. In the ApprenticeUniverse, I called the dispatch in the components
+                where I need to update the data with a use effect to call the API on a change. 
+            </p>
+
+            <div><img src="../images/Redux-app/Screen Shot 2023-05-02 at 19.50.11.png" alt="Actions" 
+                style="width: 35%;"></div>
+
+            Those are the main differences that I found between the old configuration and the new one. I found them really useful
+            and I'm excited to use them in my next project where I'll have my own service. 
+
+
+            <p></p>
+
+
+
     <a id="topbutton" href="#top">Back to the Top </a>
 
 
